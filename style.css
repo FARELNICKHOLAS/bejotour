@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  padding-top: 2rem;
+}
+
+/* Jumbotron styling */
+.jumbotron {
+  padding-top: 10rem;
+  background-color: #5e6c5b;
+  position: relative;
+  overflow: hidden;
+}
+
+.jumbotron h1,
+.jumbotron p {
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+
+.jumbotron h1 {
+  animation-delay: 0s;
+}
+
+.jumbotron p {
+  animation-delay: 1.5s;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.about {
+  padding-top: 5rem;
+}
+
+#projects {
+  background-color: #5e6c5b;
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 10rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+
+span {
+  color: #8c98ce;
+}
+
+.iconsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.iconsContainer .icons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem 3rem;
+}
+
+.iconsContainer .icons .bi {
+  cursor: pointer;
+  font-size: 40px;
+  padding: 1.5rem 2rem;
+  border-radius: 50%;
+  background-image: linear-gradient(to right, #71ae73, #ffcc99);
+  background-size: 200%;
+  transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+  color: black;
+}
+
+.iconsContainer .icons .bi:hover {
+  background-position: right;
+  transform: scale(1.1);
+}
+
+.card-img-top {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
