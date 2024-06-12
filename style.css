@@ -30,7 +30,6 @@ section {
   animation-delay: 1.5s;
 }
 
-/* Keyframes for fade-in effect */
 @keyframes fadeIn {
   to {
     opacity: 1;
@@ -38,12 +37,47 @@ section {
 }
 
 .about {
-  padding-top: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.about-text {
+  max-width: 100%; /* Adjusted max-width for better responsiveness */
+  text-align: justify; /* Justify text for better readability */
+}
+
+.about-text p {
+  margin-bottom: 1.5rem;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .about-text p {
+    font-size: 0.9rem; /* Decreased font size for better readability on smaller screens */
+  }
 }
 
 #projects {
   background-color: #5e6c5b;
   position: relative;
+}
+
+.video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+.video-container video {
+  max-width: 50%; /* For larger screens */
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .video-container video {
+    max-width: 100%; /* Increase the max-width for mobile view */
+  }
 }
 
 h2 {
@@ -62,19 +96,19 @@ span {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  height: 50vh;
 }
 
 .iconsContainer .icons {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: 4rem 3rem;
+  grid-gap: 2rem 1rem;
 }
 
 .iconsContainer .icons .bi {
   cursor: pointer;
-  font-size: 40px;
-  padding: 1.5rem 2rem;
+  font-size: 30px;
+  padding: 1rem 1.5rem;
   border-radius: 50%;
   background-image: linear-gradient(to right, #71ae73, #ffcc99);
   background-size: 200%;
@@ -103,5 +137,49 @@ html {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+  .jumbotron {
+    padding-top: 5rem;
+  }
+
+  .iconsContainer {
+    height: auto;
+    padding: 2rem 0;
+  }
+
+  .iconsContainer .icons {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem 0.5rem;
+  }
+
+  .iconsContainer .icons .bi {
+    font-size: 20px;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .about {
+    padding-top: 2rem;
+  }
+
+  #projects {
+    padding-top: 2rem;
+  }
+
+  h2 {
+    margin-top: 5rem;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .card img {
+    max-width: 100%;
+    height: auto;
   }
 }
