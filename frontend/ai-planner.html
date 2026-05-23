@@ -1,196 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AI Itinerary Planner | B'jo Bali Tour</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="light-theme">
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg fixed-top glass-navbar scrolled">
-      <div class="container">
-        <a class="navbar-brand fw-bold text-gradient fs-4" href="index.html">B'jo Bali Tour</a>
-        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto fw-medium align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="index.html#why-us">Experience</a></li>
-            <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
-            <li class="nav-item"><a class="nav-link active" href="ai-planner.html">AI Planner</a></li>
-            <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-              <a class="btn btn-primary rounded-pill px-4 btn-glow" href="booking.html">Book Now</a>
-            </li>
-          </ul>
-        </div>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Itinerary Planner | B'jo Bali Tour</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="light-theme">
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top glass-navbar scrolled">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-4" href="index.html" style="letter-spacing: -0.5px;"><span
+          style="color: var(--text-main);">Bejo </span><span class="text-gradient"
+          style="font-style: italic; padding-right: 0.2em;">Bali Trip</span></a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto fw-medium align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#why-us">Experience</a></li>
+          <li class="nav-item"><a class="nav-link" href="tours.html">Tours</a></li>
+          <li class="nav-item"><a class="nav-link active" href="ai-planner.html">AI Planner</a></li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-primary rounded-pill px-4 btn-glow" href="booking.html">Book Now</a>
+          </li>
+        </ul>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <!-- Header Section -->
-    <section class="pb-4 reveal" style="padding-top: 120px;">
-      <div class="container text-center mt-5">
-        <div class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white shadow-sm mb-3 border border-light">
-          <i class="bi bi-robot text-primary"></i> <span class="text-muted small fw-bold">POWERED BY AI</span>
-        </div>
-        <h1 class="display-4 fw-bold text-main mb-3">Design Your <span class="text-gradient">Dream Trip</span></h1>
-        <p class="lead text-muted max-w-700 mx-auto">Tell our AI what kind of vibe you're looking for, and we'll instantly generate a personalized Bali itinerary just for you.</p>
+  <!-- Header Section -->
+  <section class="pb-4 reveal" style="padding-top: 120px;">
+    <div class="container text-center mt-5">
+      <div
+        class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white shadow-sm mb-3 border border-light">
+        <i class="bi bi-robot text-primary"></i> <span class="text-muted small fw-bold">POWERED BY AI</span>
       </div>
-    </section>
+      <h1 class="display-4 fw-bold text-main mb-3">Tour <span class="text-gradient">Matchmaker</span></h1>
+      <p class="lead text-muted max-w-700 mx-auto">Not sure which tour to pick? Tell our AI your vibe and preferences,
+        and we'll match you with the perfect 1-day tour package.</p>
+    </div>
+  </section>
 
-    <!-- AI Planner Form -->
-    <section class="pb-6 reveal">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="glass-card rounded-5 p-4 p-md-5 position-relative overflow-hidden">
-              <form id="aiPlannerForm" class="position-relative z-1">
-                <div class="row g-4">
-                  <div class="col-md-6">
-                    <label class="form-label text-main fw-medium">Duration (Days)</label>
-                    <select class="form-select bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4" id="tripDuration">
-                      <option value="3">3 Days (Short Escape)</option>
-                      <option value="5">5 Days (Standard)</option>
-                      <option value="7">7 Days (Explorer)</option>
-                    </select>
-                  </div>
-                  <div class="col-md-6">
-                    <label class="form-label text-main fw-medium">Travel Vibe</label>
-                    <select class="form-select bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4" id="tripVibe">
-                      <option value="Relaxing">Relaxing & Wellness</option>
-                      <option value="Adventure">Adventure & Nature</option>
-                      <option value="Culture">Culture & Temples</option>
-                      <option value="Romance">Romantic Honeymoon</option>
-                    </select>
-                  </div>
-                  <div class="col-12">
-                    <label class="form-label text-main fw-medium">Any specific requests? (Optional)</label>
-                    <textarea class="form-control bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4" id="tripRequests" rows="3" placeholder="e.g. I want to see the sunset at Tanah Lot..."></textarea>
-                  </div>
-                  <div class="col-12 text-center mt-4">
-                    <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 btn-glow w-100 py-3 d-flex align-items-center justify-content-center gap-2" id="generateBtn">
-                      <i class="bi bi-magic"></i> Generate My Itinerary
-                    </button>
-                  </div>
+  <!-- AI Planner Form -->
+  <section class="pb-6 reveal">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="glass-card rounded-5 p-4 p-md-5 position-relative overflow-hidden">
+            <form id="aiPlannerForm" class="position-relative z-1">
+              <div class="row g-4">
+                <div class="col-md-4">
+                  <label class="form-label text-main fw-medium">Travel Vibe</label>
+                  <select class="form-select bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4"
+                    id="tripVibe">
+                    <option value="Relaxing">Relaxing & Wellness</option>
+                    <option value="Adventure">Adventure & Nature</option>
+                    <option value="Culture">Culture & Temples</option>
+                    <option value="Romance">Romantic Honeymoon</option>
+                  </select>
                 </div>
-              </form>
+                <div class="col-md-4">
+                  <label class="form-label text-main fw-medium">Travel Companions</label>
+                  <select class="form-select bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4"
+                    id="tripCompanions">
+                    <option value="Solo">Solo Traveler</option>
+                    <option value="Couple">Couple / Honeymoon</option>
+                    <option value="Family">Family with Kids</option>
+                    <option value="Friends">Group of Friends</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label text-main fw-medium">Activity Level</label>
+                  <select class="form-select bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4"
+                    id="tripActivity">
+                    <option value="Relaxed">Relaxed & Easy</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Active">Active & Adventurous</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label text-main fw-medium">Any specific requests? (Optional)</label>
+                  <textarea class="form-control bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4"
+                    id="tripRequests" rows="3"
+                    placeholder="e.g. I really want to see a beautiful sunset, but I don't want to walk too much."></textarea>
+                </div>
+                <div class="col-12 text-center mt-4">
+                  <button type="submit"
+                    class="btn btn-primary btn-lg rounded-pill px-5 btn-glow w-100 py-3 d-flex align-items-center justify-content-center gap-2"
+                    id="generateBtn">
+                    <i class="bi bi-magic"></i> Find My Perfect Match
+                  </button>
+                </div>
+              </div>
+            </form>
 
-              <!-- Loading State -->
-              <div id="aiLoading" class="text-center py-5 d-none position-relative z-1">
-                <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;" role="status">
-                  <span class="visually-hidden">Loading...</span>
-                </div>
-                <h4 class="text-main fw-bold">AI is crafting your journey...</h4>
-                <p class="text-muted">Analyzing the best spots in Bali for your <span id="loadingVibe" class="text-primary fw-bold"></span> vibe.</p>
+            <!-- Loading State -->
+            <div id="aiLoading" class="text-center py-5 d-none position-relative z-1">
+              <div class="spinner-border text-primary mb-3" style="width: 3rem; height: 3rem;" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+              <h4 class="text-main fw-bold">AI is crafting your journey...</h4>
+              <p class="text-muted">Analyzing the best spots in Bali for your <span id="loadingVibe"
+                  class="text-primary fw-bold"></span> vibe.</p>
+            </div>
+
+            <!-- Match Result -->
+            <div id="aiResult"
+              class="mt-5 pt-4 border-top border-secondary border-opacity-25 d-none position-relative z-1">
+              <div class="text-center mb-4">
+                <span class="badge bg-success rounded-pill px-3 py-2 fs-6 mb-2"><i
+                    class="bi bi-star-fill text-warning me-1"></i> 100% Match Found</span>
+                <h3 class="text-main fw-bold">Your Perfect Bali Experience</h3>
               </div>
 
-              <!-- Result Timeline -->
-              <div id="aiResult" class="mt-5 pt-4 border-top border-secondary border-opacity-25 d-none position-relative z-1">
-                <h3 class="text-main fw-bold mb-4">Your AI-Generated Itinerary</h3>
-                <div class="timeline" id="timelineContainer">
-                  <!-- Dynamically injected via JS -->
+              <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-4"
+                style="background: linear-gradient(145deg, #ffffff, #f8f9fa);">
+                <div class="card-body p-4 p-md-5">
+                  <h2 class="display-6 fw-bold text-gradient mb-4 text-center" id="resPackageName">Ubud Tour</h2>
+
+                  <div class="mb-4">
+                    <h5 class="fw-bold text-main mb-2"><i class="bi bi-chat-right-quote-fill text-primary me-2"></i>Why
+                      this is perfect for you:</h5>
+                    <p class="text-muted fs-5 fst-italic" id="resReasoning" style="line-height: 1.6;">
+                      "Reasoning goes here..."
+                    </p>
+                  </div>
+
+                  <div>
+                    <h6 class="fw-bold text-main mb-3 text-uppercase tracking-wide small">Key Highlights</h6>
+                    <ul class="list-unstyled row g-2" id="resHighlights">
+                      <!-- Injected via JS -->
+                    </ul>
+                  </div>
                 </div>
-                
-                <div class="text-center mt-5 bg-white bg-opacity-50 shadow-sm p-4 rounded-4 border border-white">
-                  <h5 class="text-main fw-bold mb-3">Love this itinerary? Let's make it happen!</h5>
-                  <button id="bookAiTrip" class="btn btn-primary rounded-pill px-5 py-3 btn-glow d-inline-flex align-items-center gap-2">
-                    <i class="bi bi-whatsapp"></i> Book This via WhatsApp
-                  </button>
+                <div class="card-footer bg-white border-top-0 p-4 text-center">
+                  <a href="#" id="bookAiTrip"
+                    class="btn btn-primary btn-lg rounded-pill px-5 py-3 btn-glow d-inline-flex align-items-center gap-2 w-100 justify-content-center">
+                    <i class="bi bi-calendar-check"></i> Book This Package Now
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer class="footer text-center py-4 mt-auto border-top border-secondary border-opacity-25">
-      <div class="container">
-        <p class="text-muted mb-0">&copy; 2024 B'jo Bali Transport & Tour. Premium Experience.</p>
-      </div>
-    </footer>
+  <!-- Footer -->
+  <footer class="footer text-center py-4 mt-auto border-top border-secondary border-opacity-25">
+    <div class="container">
+      <p class="text-muted mb-0">&copy; 2024 B'jo Bali Transport & Tour. Premium Experience.</p>
+    </div>
+  </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Scroll Reveal Animation
-      function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
-        for (var i = 0; i < reveals.length; i++) {
-          var windowHeight = window.innerHeight;
-          var elementTop = reveals[i].getBoundingClientRect().top;
-          if (elementTop < windowHeight - 150) {
-            reveals[i].classList.add("active");
-          }
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Scroll Reveal Animation
+    function reveal() {
+      var reveals = document.querySelectorAll(".reveal");
+      for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        if (elementTop < windowHeight - 150) {
+          reveals[i].classList.add("active");
         }
       }
-      window.addEventListener("scroll", reveal);
-      reveal();
+    }
+    window.addEventListener("scroll", reveal);
+    reveal();
 
-      // AI Planner Logic
-      const form = document.getElementById('aiPlannerForm');
-      const generateBtn = document.getElementById('generateBtn');
-      const loading = document.getElementById('aiLoading');
-      const result = document.getElementById('aiResult');
-      const timeline = document.getElementById('timelineContainer');
-      const loadingVibe = document.getElementById('loadingVibe');
-      
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const duration = document.getElementById('tripDuration').value;
-        const vibe = document.getElementById('tripVibe').value;
-        
-        // UI transitions
-        form.classList.add('d-none');
-        loading.classList.remove('d-none');
-        loadingVibe.innerText = vibe;
-        
-        // Simulate AI API Call (2 seconds)
-        setTimeout(() => {
+    // AI Planner Logic
+    const form = document.getElementById('aiPlannerForm');
+    const generateBtn = document.getElementById('generateBtn');
+    const loading = document.getElementById('aiLoading');
+    const result = document.getElementById('aiResult');
+    const loadingVibe = document.getElementById('loadingVibe');
+
+    const resPackageName = document.getElementById('resPackageName');
+    const resReasoning = document.getElementById('resReasoning');
+    const resHighlights = document.getElementById('resHighlights');
+    const bookAiTrip = document.getElementById('bookAiTrip');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const vibe = document.getElementById('tripVibe').value;
+      const companions = document.getElementById('tripCompanions').value;
+      const activity = document.getElementById('tripActivity').value;
+      const requests = document.getElementById('tripRequests').value;
+
+      // UI transitions
+      form.classList.add('d-none');
+      loading.classList.remove('d-none');
+      loadingVibe.innerText = vibe;
+
+      // System prompt to force JSON response
+      const systemPrompt = `You are an expert Bali Travel Advisor. Recommend EXACTLY ONE 1-day tour package. ` +
+        `User Profile: Vibe is ${vibe}. Companions: ${companions}. Activity Level: ${activity}. Requests: ${requests || 'None'}. ` +
+        `Choose ONLY ONE from: "Ubud Tour", "East Bali Tour", "North Bali Tour", "South Bali Tour", "Kintamani Tour", or "Waterfall Tour". ` +
+        `Respond STRICTLY in JSON format with exactly 3 keys. No arrays, just strings. ` +
+        `Format: {"package": "Ubud Tour", "reason": "Your reason here...", "highlights": "Monkey Forest, Palace, Rice Terrace"}. ` +
+        `IMPORTANT: Do NOT use any double quotes inside your reason or highlights text. Output ONLY valid JSON.`;
+
+      fetch('http://localhost:1234/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: `Recommend the best tour package based on my profile.` }
+          ],
+          temperature: 0.3,
+          max_tokens: 800
+        })
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
           loading.classList.add('d-none');
           result.classList.remove('d-none');
-          generateTimeline(duration, vibe);
-        }, 2500);
-      });
 
-      function generateTimeline(days, vibe) {
-        let html = '';
-        for(let i=1; i<=days; i++) {
-          let activity = vibe === 'Relaxing' ? `Morning Yoga, followed by a spa session and sunset dinner at Jimbaran.` 
-                      : vibe === 'Adventure' ? `ATV Ride through the jungle, water sports, and hiking Mount Batur.`
-                      : vibe === 'Culture' ? `Visit Uluwatu Temple, watch Kecak Dance, and explore Ubud traditional market.`
-                      : `Romantic sunrise walk, couples massage, and a private candlelight dinner by the beach.`;
-          
-          html += `
-            <div class="timeline-item position-relative ps-4 pb-4 border-start border-primary border-2 ms-2">
-              <div class="timeline-dot position-absolute bg-primary rounded-circle" style="width: 16px; height: 16px; left: -9px; top: 0; box-shadow: 0 0 10px var(--primary);"></div>
-              <h5 class="text-gradient fw-bold mb-1">Day ${i}</h5>
-              <p class="text-muted mb-0">${activity}</p>
-            </div>
-          `;
-        }
-        timeline.innerHTML = html;
+          try {
+            let content = data.choices[0].message.content.trim();
+
+            // Robust JSON extraction
+            const startIndex = content.indexOf('{');
+            const endIndex = content.lastIndexOf('}');
+
+            if (startIndex === -1 || endIndex === -1) {
+              throw new Error("No JSON object found in response");
+            }
+
+            let jsonString = content.substring(startIndex, endIndex + 1);
+
+            // Clean up common AI JSON issues (like control characters)
+            jsonString = jsonString.replace(/[\u0000-\u001F]+/g, ' ');
+
+            const parsedData = JSON.parse(jsonString);
+            if (parsedData && (parsedData.package || parsedData.recommended_package)) {
+              renderMatchResult(parsedData);
+            } else {
+              throw new Error("Invalid JSON structure returned by AI");
+            }
+          } catch (err) {
+            console.error('JSON Parsing Error:', err, 'Raw AI Response:', data.choices[0].message.content);
+
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'alert alert-danger text-start';
+            errorDiv.innerHTML = `<strong>Oops, the AI got confused!</strong><br>The AI returned a format we couldn't parse. Here is what it said:<br><br>`;
+
+            const rawOutput = document.createElement('div');
+            rawOutput.className = 'bg-light p-3 rounded text-dark mt-2';
+            rawOutput.style.maxHeight = '200px';
+            rawOutput.style.overflowY = 'auto';
+            rawOutput.style.whiteSpace = 'pre-wrap';
+            rawOutput.style.fontFamily = 'monospace';
+            rawOutput.textContent = data.choices[0].message.content; // textContent prevents HTML injection/truncation
+
+            errorDiv.appendChild(rawOutput);
+            document.getElementById('aiResult').innerHTML = '';
+            document.getElementById('aiResult').appendChild(errorDiv);
+          }
+        })
+        .catch(err => {
+          console.error('API Connection Error:', err);
+          loading.classList.add('d-none');
+          form.classList.remove('d-none');
+          alert("Failed to connect to LM Studio API. Please ensure your LM Studio Local Server is running on http://localhost:1234 and CORS is enabled.");
+        });
+    });
+
+    function renderMatchResult(data) {
+      // Handle both new and old schema just in case
+      const pkgName = data.package || data.recommended_package || "Tour Package";
+      const reason = data.reason || data.reasoning || "This is a great choice for you.";
+      const highlights = data.highlights || "";
+
+      resPackageName.textContent = pkgName;
+      resReasoning.textContent = `"${reason}"`;
+
+      let highlightsHtml = '';
+      if (Array.isArray(highlights)) {
+        highlights.forEach(hl => {
+          highlightsHtml += `<li class="col-md-6 mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>${hl}</li>`;
+        });
+      } else if (typeof highlights === 'string') {
+        // split by comma
+        const hlArray = highlights.split(',').map(h => h.trim()).filter(h => h.length > 0);
+        hlArray.forEach(hl => {
+          highlightsHtml += `<li class="col-md-6 mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>${hl}</li>`;
+        });
       }
+      resHighlights.innerHTML = highlightsHtml;
 
-      // WhatsApp Booking
-      document.getElementById('bookAiTrip').addEventListener('click', () => {
-        const duration = document.getElementById('tripDuration').value;
-        const vibe = document.getElementById('tripVibe').value;
-        const req = document.getElementById('tripRequests').value;
-        
-        let msg = `Hi B'jo Bali Tour! I used your AI Planner and I'm interested in a *${duration}-Day ${vibe} Trip*.`;
-        if(req) msg += `\nSpecial requests: ${req}`;
-        msg += `\n\nCan you give me the pricing details?`;
-        
-        const waLink = `https://wa.me/6281234567890?text=${encodeURIComponent(msg)}`; // Ganti nomor jika perlu
-        window.open(waLink, '_blank');
-      });
-    </script>
-  </body>
+      // Auto-configure booking button link
+      let pkgParam = pkgName.split(' ')[0]; // e.g., "Ubud Tour" -> "Ubud"
+      bookAiTrip.href = `booking.html?pkg=${pkgParam}`;
+    }
+  </script>
+</body>
+
 </html>

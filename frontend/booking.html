@@ -12,39 +12,24 @@
     <link rel="stylesheet" href="style.css" />
     <style>
       /* Voice Button Animation */
-      .voice-btn {
-        width: 100px; height: 100px;
-        border-radius: 50%;
-        background: var(--bg-surface);
-        border: 3px solid var(--primary);
-        color: var(--primary);
-        font-size: 2.5rem;
-        display: flex; align-items: center; justify-content: center;
-        margin: 0 auto;
-        cursor: pointer;
-        transition: all 0.3s ease;
-      }
-      .voice-btn:hover {
-        transform: scale(1.05);
-        box-shadow: 0 10px 30px var(--primary-glow);
-      }
       .voice-btn.recording {
-        background: var(--primary);
         color: white;
         animation: pulse-recording 1.5s infinite;
       }
       @keyframes pulse-recording {
         0% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7); }
-        70% { box-shadow: 0 0 0 25px rgba(5, 150, 105, 0); }
+        70% { box-shadow: 0 0 0 10px rgba(5, 150, 105, 0); }
         100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
       }
+      .blink { animation: blinker 1s linear infinite; }
+      @keyframes blinker { 50% { opacity: 0; } }
     </style>
   </head>
   <body class="light-theme">
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top glass-navbar scrolled">
       <div class="container">
-        <a class="navbar-brand fw-bold text-gradient fs-4" href="index.html">B'jo Bali Tour</a>
+        <a class="navbar-brand fw-bold fs-4" href="index.html" style="letter-spacing: -0.5px;"><span style="color: var(--text-main);">Bejo </span><span class="text-gradient" style="font-style: italic; padding-right: 0.2em;">Bali Trip</span></a>
         <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -77,15 +62,6 @@
           <div class="col-lg-8">
             <div class="glass-card rounded-5 p-4 p-md-5 position-relative overflow-hidden">
               
-              <!-- Voice Option -->
-              <div class="text-center mb-5 pb-5 border-bottom border-secondary border-opacity-25">
-                <p class="text-muted fw-bold mb-4 text-uppercase tracking-wide">Tap to use Voice-to-Text</p>
-                <button id="voiceBtn" class="voice-btn shadow-lg" title="Tap to speak">
-                  <i class="bi bi-mic-fill" id="micIcon"></i>
-                </button>
-                <p id="voiceStatus" class="text-primary mt-4 fw-bold d-none fs-5">Listening to your request...</p>
-              </div>
-
               <!-- Form -->
               <form id="smartBookingForm">
                 <div class="row g-4">
@@ -97,11 +73,42 @@
                     <label class="form-label text-main fw-medium">Total Passengers</label>
                     <input type="number" class="form-control bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4" id="bookPax" required min="1" placeholder="2">
                   </div>
-                  <div class="col-12">
-                    <label class="form-label text-main fw-medium">What's your plan?</label>
-                    <textarea class="form-control bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4" id="bookPlan" rows="5" required placeholder="Example: I need a car from Airport to Ubud tomorrow morning, and then a full day tour to Kintamani on the next day."></textarea>
-                    <div class="form-text text-muted mt-2"><i class="bi bi-magic text-primary"></i> Don't worry about formatting, our system will organize this.</div>
+
+                  <div class="col-md-6">
+                    <label class="form-label text-main fw-medium">Service Type</label>
+                    <select class="form-select bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4" id="bookService" required>
+                      <option value="" selected disabled>Select a service...</option>
+                      <option value="Tour Package">Tour Package</option>
+                      <option value="Airport/Hotel Transfer">Airport/Hotel Transfer</option>
+                      <option value="Fast Boat">Fast Boat Ticket</option>
+                      <option value="Other">Other / Custom Plan</option>
+                    </select>
                   </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label text-main fw-medium">Pickup Date & Time</label>
+                    <input type="datetime-local" class="form-control bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4" id="bookDate" required>
+                  </div>
+
+                  <div class="col-12 d-none" id="selectionContainer">
+                    <label class="form-label text-main fw-medium" id="selectionLabel">Specific Option</label>
+                    <select class="form-select bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4" id="bookSelection">
+                      <option value="" selected disabled>Select an option...</option>
+                      <!-- Options populated dynamically -->
+                    </select>
+                  </div>
+
+                  <div class="col-12 mt-4">
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                      <label class="form-label text-main fw-medium mb-0">Additional Notes / Special Requests</label>
+                      <button type="button" id="voiceBtn" class="btn btn-sm btn-outline-primary rounded-pill d-flex align-items-center gap-1 voice-btn" title="Tap to dictate notes">
+                        <i class="bi bi-mic-fill" id="micIcon"></i> <span id="voiceBtnText">Voice Dictation</span>
+                      </button>
+                    </div>
+                    <p id="voiceStatus" class="text-primary small fw-bold d-none mb-2 blink">Listening to your voice...</p>
+                    <textarea class="form-control bg-white bg-opacity-75 border-0 shadow-sm text-dark p-3 rounded-4" id="bookNotes" rows="4" placeholder="Any special requests? e.g., We need a baby car seat."></textarea>
+                  </div>
+
                   <div class="col-12 text-center mt-5">
                     <button type="submit" class="btn btn-primary btn-lg rounded-pill px-5 btn-glow w-100 py-4 fs-5 d-flex align-items-center justify-content-center gap-2">
                       <i class="bi bi-whatsapp"></i> Send Booking to WhatsApp
@@ -138,11 +145,64 @@
       window.addEventListener("scroll", reveal);
       reveal();
 
-      // Voice simulation logic
+      // Dynamic Dropdown Logic
+      const serviceSelect = document.getElementById('bookService');
+      const selectionContainer = document.getElementById('selectionContainer');
+      const selectionSelect = document.getElementById('bookSelection');
+      const selectionLabel = document.getElementById('selectionLabel');
+
+      const tourPackages = [
+        "Ubud Tour (IDR 700K / $70)",
+        "East Bali Tour (IDR 750K / $75)",
+        "North Bali Tour (IDR 750K / $75)",
+        "South Bali Tour (IDR 750K / $75)",
+        "Kintamani Tour (IDR 750K / $75)",
+        "Waterfall Tour (IDR 750K / $75)"
+      ];
+
+      const transferDestinations = [
+        "Kuta (150K / $15)", "Legian (200K / $20)", "Sanur (200K / $20)",
+        "Seminyak (250K / $25)", "Jimbaran (250K / $25)", "Nusa Dua (250K / $25)",
+        "Canggu (350K / $35)", "Ubud (400K / $40)", "Uluwatu (400K / $40)",
+        "Padang Bai (500K / $50)", "Tanah Lot (350K / $35)", "Candidasa (600K / $60)",
+        "Kintamani (750K / $75)", "Lovina (800K / $80)", "Amed (800K / $80)",
+        "Pemuteran (900K / $90)"
+      ];
+
+      serviceSelect.addEventListener('change', function() {
+        const val = this.value;
+        selectionSelect.innerHTML = '<option value="" selected disabled>Select an option...</option>';
+        
+        if (val === 'Tour Package') {
+          selectionLabel.textContent = "Which Tour Package?";
+          tourPackages.forEach(pkg => {
+             const opt = document.createElement('option');
+             opt.value = pkg; opt.textContent = pkg;
+             selectionSelect.appendChild(opt);
+          });
+          selectionContainer.classList.remove('d-none');
+          selectionSelect.required = true;
+        } else if (val === 'Airport/Hotel Transfer') {
+          selectionLabel.textContent = "Destination Area";
+          transferDestinations.forEach(dest => {
+             const opt = document.createElement('option');
+             opt.value = dest; opt.textContent = dest;
+             selectionSelect.appendChild(opt);
+          });
+          selectionContainer.classList.remove('d-none');
+          selectionSelect.required = true;
+        } else {
+          selectionContainer.classList.add('d-none');
+          selectionSelect.required = false;
+        }
+      });
+
+      // Voice logic
       const voiceBtn = document.getElementById('voiceBtn');
       const micIcon = document.getElementById('micIcon');
+      const voiceBtnText = document.getElementById('voiceBtnText');
       const voiceStatus = document.getElementById('voiceStatus');
-      const planInput = document.getElementById('bookPlan');
+      const notesInput = document.getElementById('bookNotes');
       
       let isRecording = false;
       let recognition = null;
@@ -156,10 +216,11 @@
 
         recognition.onstart = function() {
           isRecording = true;
-          voiceBtn.classList.add('recording');
+          voiceBtn.classList.add('recording', 'btn-primary');
+          voiceBtn.classList.remove('btn-outline-primary');
           micIcon.classList.replace('bi-mic-fill', 'bi-mic-mute-fill');
+          voiceBtnText.textContent = "Stop Dictation";
           voiceStatus.classList.remove('d-none');
-          planInput.value = "";
         };
 
         recognition.onresult = function(event) {
@@ -167,7 +228,8 @@
           for (let i = 0; i < event.results.length; ++i) {
             transcript += event.results[i][0].transcript;
           }
-          planInput.value = transcript;
+          // Set transcribed text to notes
+          notesInput.value = transcript;
         };
 
         recognition.onerror = function(event) {
@@ -182,8 +244,10 @@
 
       function stopRecording() {
         isRecording = false;
-        voiceBtn.classList.remove('recording');
+        voiceBtn.classList.remove('recording', 'btn-primary');
+        voiceBtn.classList.add('btn-outline-primary');
         micIcon.classList.replace('bi-mic-mute-fill', 'bi-mic-fill');
+        voiceBtnText.textContent = "Voice Dictation";
         voiceStatus.classList.add('d-none');
       }
 
@@ -204,11 +268,52 @@
         e.preventDefault();
         const name = document.getElementById('bookName').value;
         const pax = document.getElementById('bookPax').value;
-        const plan = document.getElementById('bookPlan').value;
+        const service = document.getElementById('bookService').value;
+        const dateRaw = document.getElementById('bookDate').value;
+        const dateObj = new Date(dateRaw);
+        const dateStr = dateObj.toLocaleString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
         
-        const msg = `*NEW SMART BOOKING*\n\n*Name:* ${name}\n*Passengers:* ${pax} Person(s)\n*Plan Details:*\n"${plan}"\n\nPlease let me know the availability and price!`;
+        const selection = !selectionContainer.classList.contains('d-none') ? document.getElementById('bookSelection').value : '-';
+        const notes = document.getElementById('bookNotes').value || 'None';
+        
+        let msg = `*NEW BOOKING REQUEST*\n\n`;
+        msg += `*Name:* ${name}\n`;
+        msg += `*Passengers:* ${pax} Person(s)\n`;
+        msg += `*Date/Time:* ${dateStr}\n`;
+        msg += `*Service:* ${service}\n`;
+        if (selection && selection !== '-') {
+          msg += `*Selection:* ${selection}\n`;
+        }
+        msg += `*Notes:* ${notes}\n\n`;
+        msg += `Please let me know the availability!`;
+        
         const waLink = `https://wa.link/nyw55n?text=${encodeURIComponent(msg)}`;
         window.open(waLink, '_blank');
+      });
+
+      // Auto-select package from URL parameters
+      document.addEventListener('DOMContentLoaded', () => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const pkg = urlParams.get('pkg');
+        const type = urlParams.get('type');
+        
+        if (pkg) {
+          serviceSelect.value = "Tour Package";
+          // Trigger change event to populate specific options
+          serviceSelect.dispatchEvent(new Event('change'));
+          
+          // Find and select the matching package option
+          const options = selectionSelect.options;
+          for (let i = 0; i < options.length; i++) {
+            if (options[i].value.toLowerCase().includes(pkg.toLowerCase())) {
+              selectionSelect.value = options[i].value;
+              break;
+            }
+          }
+        } else if (type === 'fastboat') {
+          serviceSelect.value = "Fast Boat";
+          serviceSelect.dispatchEvent(new Event('change'));
+        }
       });
     </script>
   </body>
