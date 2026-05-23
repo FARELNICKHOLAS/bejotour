@@ -1,28 +1,28 @@
 <div align="center">
   <img src="./frontend/img/logo_modern.png" alt="B'jo Bali Tour Logo" width="150" height="150" />
-  <h1>🌴 Bejo Bali Trip 🌴</h1>
+  <h1> Bejo Bali Trip </h1>
   <p><strong>A premium, neo-tropical web application for B'jo Bali Transport & Tour.</strong></p>
   <p><em>Where stunning modern aesthetics meet cutting-edge Local AI to provide the ultimate Bali travel booking experience.</em></p>
 </div>
 
 <hr />
 
-## ✨ Key Features
+## Key Features
 
-- 🎨 **Premium UI/UX Design**: Built with Bootstrap 5, featuring a bespoke "neo-tropical" design language, premium glassmorphism elements (`glass-card`), smooth scroll-reveal animations, and responsive Bento Box layouts.
-- 🤖 **AI Tour Matchmaker**: A fully local AI-powered assistant (via LM Studio) that acts as a highly persuasive travel advisor. It intelligently matches users to the perfect 1-day tour package based on their vibe, companions, and activity level.
-- 🎤 **Smart Voice-to-Text Booking**: Tap the microphone to speak your travel needs! The system uses the SpeechRecognition API to transcribe your voice instantly.
-- 🌍 **Multi-Language Support (i18n)**: Instantly switch the entire interface between English (EN), Indonesian (ID), and Chinese (ZH).
-- 📲 **Seamless WhatsApp Integration**: Automatically formats booking requests and AI-recommended itineraries into pre-filled WhatsApp messages for instant closing.
 
-## 🚀 Tech Stack
+- *AI Tour Matchmaker**: A fully local AI-powered assistant (via LM Studio) that acts as a highly persuasive travel advisor. It intelligently matches users to the perfect 1-day tour package based on their vibe, companions, and activity level.
+- **Smart Voice-to-Text Booking**: Tap the microphone to speak your travel needs! The system uses the SpeechRecognition API to transcribe your voice instantly.
+- **Multi-Language Support (i18n)**: Instantly switch the entire interface between English (EN), Indonesian (ID), and Chinese (ZH).
+- **Seamless WhatsApp Integration**: Automatically formats booking requests and AI-recommended itineraries into pre-filled WhatsApp messages for instant closing.
+
+## Tech Stack
 
 - **Frontend**: HTML5, CSS3, Bootstrap 5.3, Vanilla JavaScript.
 - **Assets**: Google Fonts (Outfit), Bootstrap Icons, Unsplash API.
 - **Backend Services**: Node.js & Supabase integration for backend database seeding.
 - **Local AI**: LM Studio integration for offline, privacy-first AI matching inferences.
 
-## 🛠️ Setup & Running Locally
+## Setup & Running Locally
 
 ### 1. Frontend Web App
 No build tools required! Just open the application in your browser:
