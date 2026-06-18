@@ -12,17 +12,23 @@
     <link rel="stylesheet" href="style.css" />
     <style>
       /* Voice Button Animation */
+      .voice-btn {
+        transition: transform var(--duration-fast) var(--ease-spring), background var(--duration-med), color var(--duration-med);
+      }
+      .voice-btn:active {
+        transform: scale(0.92);
+      }
       .voice-btn.recording {
         color: white;
-        animation: pulse-recording 1.5s infinite;
+        animation: pulse-recording 1.5s var(--ease-spring) infinite;
       }
       @keyframes pulse-recording {
-        0% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.7); }
-        70% { box-shadow: 0 0 0 10px rgba(5, 150, 105, 0); }
-        100% { box-shadow: 0 0 0 0 rgba(5, 150, 105, 0); }
+        0% { box-shadow: 0 0 0 0 var(--primary-glow); }
+        70% { box-shadow: 0 0 0 15px transparent; }
+        100% { box-shadow: 0 0 0 0 transparent; }
       }
-      .blink { animation: blinker 1s linear infinite; }
-      @keyframes blinker { 50% { opacity: 0; } }
+      .blink { animation: blinker 1.5s var(--ease-fluid) infinite; }
+      @keyframes blinker { 50% { opacity: 0.3; } }
     </style>
   </head>
   <body class="light-theme">
