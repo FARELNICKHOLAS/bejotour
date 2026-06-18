@@ -442,13 +442,13 @@
   <div class="chatbot-widget position-fixed bottom-0 end-0 m-4 z-3">
     <button
       class="btn btn-primary rounded-circle shadow-lg d-flex align-items-center justify-content-center p-3 btn-glow"
-      style="width: 60px; height: 60px;" onclick="document.getElementById('chatWindow').classList.toggle('d-none')">
+      style="width: 60px; height: 60px;" onclick="document.getElementById('chatWindow').classList.toggle('show-chat')">
       <i class="bi bi-chat-dots-fill fs-3"></i>
     </button>
 
     <!-- Chat Window -->
-    <div id="chatWindow" class="d-none position-absolute bottom-100 end-0 mb-4"
-      style="width: 340px; transform-origin: bottom right; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); z-index: 1050;">
+    <div id="chatWindow" class="position-absolute bottom-100 end-0 mb-4"
+      style="width: 340px; transform-origin: bottom right; z-index: 1050;">
       <div class="glass-card shadow-lg"
         style="border-radius: 1.5rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.8); background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(24px);">
         <!-- Header -->
@@ -465,7 +465,7 @@
             </div>
           </div>
           <button type="button" class="btn-close btn-close-white"
-            onclick="document.getElementById('chatWindow').classList.add('d-none')"></button>
+            onclick="document.getElementById('chatWindow').classList.remove('show-chat')"></button>
         </div>
 
         <!-- Body -->

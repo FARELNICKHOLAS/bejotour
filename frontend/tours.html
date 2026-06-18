@@ -16,20 +16,30 @@
         background: var(--glass-bg);
         border: 1px solid var(--glass-border);
         color: var(--text-muted);
-        transition: all 0.3s ease;
+        transition: transform var(--duration-fast) var(--ease-spring), background var(--duration-fast), color var(--duration-fast);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      .filter-btn:active {
+        transform: scale(0.95);
       }
       .filter-btn:hover, .filter-btn.active {
         background: var(--primary);
         color: white;
         border-color: var(--primary);
-        box-shadow: 0 4px 15px var(--primary-glow);
+        box-shadow: 0 8px 25px -5px var(--primary-glow);
       }
+      /* Fluid Grid Animation */
       .tour-item {
-        transition: all 0.4s ease;
+        transition: opacity var(--duration-med) var(--ease-spring), transform var(--duration-med) var(--ease-spring);
+        opacity: 1;
+        transform: scale(1);
       }
       .tour-item.hide {
-        display: none;
+        opacity: 0;
+        transform: scale(0.9);
+        pointer-events: none;
+        display: none; /* In JS we will add a slight delay before display none */
       }
     </style>
   </head>
@@ -476,7 +486,7 @@
       window.addEventListener("scroll", reveal);
       reveal();
 
-      // Smart Filter Logic
+      // Smart Filter Logic with Fluid Animation
       const filterBtns = document.querySelectorAll('.filter-btn');
       const tourItems = document.querySelectorAll('.tour-item');
 
@@ -490,14 +500,28 @@
           const filterValue = btn.getAttribute('data-filter');
           
           tourItems.forEach(item => {
-            if(filterValue === 'all') {
-              item.classList.remove('hide');
+            const shouldShow = filterValue === 'all' || item.classList.contains(filterValue);
+            
+            if (shouldShow) {
+              item.style.display = 'block';
+              // slight delay to allow display block to render before animating opacity
+              requestAnimationFrame(() => {
+                requestAnimationFrame(() => {
+                  item.classList.remove('hide');
+                  item.style.opacity = '1';
+                  item.style.transform = 'scale(1)';
+                });
+              });
             } else {
-              if(item.classList.contains(filterValue)) {
-                item.classList.remove('hide');
-              } else {
-                item.classList.add('hide');
-              }
+              item.style.opacity = '0';
+              item.style.transform = 'scale(0.9)';
+              item.classList.add('hide');
+              // wait for animation to finish before removing from layout
+              setTimeout(() => {
+                if (item.classList.contains('hide')) {
+                  item.style.display = 'none';
+                }
+              }, 400); // 400ms matches --duration-med
             }
           });
         });
