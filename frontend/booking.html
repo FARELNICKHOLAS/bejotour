@@ -20,7 +20,7 @@
       }
       .voice-btn.recording {
         color: white;
-        animation: pulse-recording 1.5s var(--ease-spring) infinite;
+        animation: pulse-recording 2s ease-in-out infinite;
       }
       @keyframes pulse-recording {
         0% { box-shadow: 0 0 0 0 var(--primary-glow); }
@@ -54,7 +54,7 @@
     </nav>
 
     <!-- Header -->
-    <section class="pb-4 reveal" style="padding-top: 120px;">
+    <section class="pb-4 reveal-fade" style="padding-top: 120px; --stagger: 1;">
       <div class="container text-center mt-5">
         <h1 class="display-4 fw-bold text-main mb-3">Smart <span class="text-gradient">Booking</span></h1>
         <p class="lead text-muted max-w-700 mx-auto">Tell us what you need. Type it out or just use your voice, and our smart system will prepare a professional booking request for you.</p>
@@ -62,7 +62,7 @@
     </section>
 
     <!-- Booking Content -->
-    <section class="pb-6 reveal">
+    <section class="pb-6 reveal-fade" style="--stagger: 2;">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-8">
@@ -137,19 +137,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Scroll Reveal Animation
-      function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
-        for (var i = 0; i < reveals.length; i++) {
-          var windowHeight = window.innerHeight;
-          var elementTop = reveals[i].getBoundingClientRect().top;
-          if (elementTop < windowHeight - 150) {
-            reveals[i].classList.add("active");
+      // Premium Intersection Observer for Staggered Reveals
+      const observerOptions = { root: null, rootMargin: '0px', threshold: 0 };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
           }
-        }
-      }
-      window.addEventListener("scroll", reveal);
-      reveal();
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal-fade').forEach((el) => {
+        observer.observe(el);
+      });
 
       // Dynamic Dropdown Logic
       const serviceSelect = document.getElementById('bookService');
