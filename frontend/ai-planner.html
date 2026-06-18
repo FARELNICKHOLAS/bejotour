@@ -14,14 +14,14 @@
   <link rel="stylesheet" href="style.css" />
   <style>
     .fade-in-up {
-      animation: fadeInUp var(--duration-slow) var(--ease-spring) forwards;
+      animation: fadeInUp var(--duration-slow) var(--ease-premium) forwards;
     }
     @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px) scale(0.95); filter: blur(10px); }
+      from { opacity: 0; transform: translateY(30px) scale(0.98); filter: blur(10px); }
       to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
     }
     #aiLoading .spinner-border {
-      animation: spinner-border 1.5s var(--ease-spring) infinite linear;
+      animation: spinner-border 1.5s var(--ease-fluid) infinite linear;
     }
   </style>
 </head>
@@ -51,7 +51,7 @@
   </nav>
 
   <!-- Header Section -->
-  <section class="pb-4 reveal" style="padding-top: 120px;">
+  <section class="pb-4 reveal-fade" style="padding-top: 120px; --stagger: 1;">
     <div class="container text-center mt-5">
       <div
         class="d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill bg-white shadow-sm mb-3 border border-light">
@@ -64,7 +64,7 @@
   </section>
 
   <!-- AI Planner Form -->
-  <section class="pb-6 reveal">
+  <section class="pb-6 reveal-fade" style="--stagger: 2;">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
@@ -135,12 +135,12 @@
                 <h3 class="text-main fw-bold">Your Perfect Bali Experience</h3>
               </div>
 
-              <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-4"
-                style="background: linear-gradient(145deg, #ffffff, #f8f9fa);">
+              <div class="card border-0 shadow-lg rounded-4 overflow-hidden mb-4 reveal-fade"
+                style="background: linear-gradient(145deg, #ffffff, #f8f9fa); --stagger: 1;">
                 <div class="card-body p-4 p-md-5">
-                  <h2 class="display-6 fw-bold text-gradient mb-4 text-center" id="resPackageName">Ubud Tour</h2>
+                  <h2 class="display-6 fw-bold text-gradient mb-4 text-center reveal-fade" style="--stagger: 2;" id="resPackageName">Ubud Tour</h2>
 
-                  <div class="mb-4">
+                  <div class="mb-4 reveal-fade" style="--stagger: 3;">
                     <h5 class="fw-bold text-main mb-2"><i class="bi bi-chat-right-quote-fill text-primary me-2"></i>Why
                       this is perfect for you:</h5>
                     <p class="text-muted fs-5 fst-italic" id="resReasoning" style="line-height: 1.6;">
@@ -148,14 +148,14 @@
                     </p>
                   </div>
 
-                  <div>
+                  <div class="reveal-fade" style="--stagger: 4;">
                     <h6 class="fw-bold text-main mb-3 text-uppercase tracking-wide small">Key Highlights</h6>
                     <ul class="list-unstyled row g-2" id="resHighlights">
                       <!-- Injected via JS -->
                     </ul>
                   </div>
                 </div>
-                <div class="card-footer bg-white border-top-0 p-4 text-center">
+                <div class="card-footer bg-white border-top-0 p-4 text-center reveal-fade" style="--stagger: 5;">
                   <a href="#" id="bookAiTrip"
                     class="btn btn-primary btn-lg rounded-pill px-5 py-3 btn-glow d-inline-flex align-items-center gap-2 w-100 justify-content-center">
                     <i class="bi bi-calendar-check"></i> Book This Package Now
@@ -178,19 +178,20 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Scroll Reveal Animation
-    function reveal() {
-      var reveals = document.querySelectorAll(".reveal");
-      for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        if (elementTop < windowHeight - 150) {
-          reveals[i].classList.add("active");
+    // Premium Intersection Observer for Staggered Reveals
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
         }
-      }
-    }
-    window.addEventListener("scroll", reveal);
-    reveal();
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal-fade').forEach((el) => {
+      observer.observe(el);
+    });
 
     // AI Planner Logic
     const form = document.getElementById('aiPlannerForm');
@@ -248,6 +249,13 @@
           loading.classList.add('d-none');
           result.classList.remove('d-none');
           result.classList.add('fade-in-up');
+          
+          // Trigger stagger animation for result children
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              result.querySelectorAll('.reveal-fade').forEach(el => el.classList.add('active'));
+            });
+          });
 
           try {
             let content = data.choices[0].message.content.trim();

@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>B'jo Bali Tour | Premium Neo-Tropical Experience</title>
+  <title>B'jo Bali Trip | Premium Neo-Tropical Experience</title>
+  
   <!-- Google Fonts: Outfit -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
@@ -24,7 +24,9 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg fixed-top glass-navbar">
     <div class="container">
-      <a class="navbar-brand fw-bold fs-4" href="#" style="letter-spacing: -0.5px;"><span style="color: var(--text-main);">Bejo </span><span class="text-gradient" style="font-style: italic; padding-right: 0.2em;">Bali Trip</span></a>
+      <a class="navbar-brand fw-bold fs-4 tracking-tight" href="#">
+        <span class="text-primary">Bejo </span><span style="font-style: italic;">Bali Trip</span>
+      </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,464 +36,309 @@
           <li class="nav-item"><a class="nav-link" href="#why-us" data-i18n="nav_experience">Experience</a></li>
           <li class="nav-item"><a class="nav-link" href="tours.html" data-i18n="nav_tours">Tours</a></li>
           <li class="nav-item"><a class="nav-link" href="ai-planner.html" data-i18n="nav_planner">AI Planner</a></li>
-          <li class="nav-item dropdown ms-2">
-            <a class="nav-link dropdown-toggle" href="#" id="langDropdown" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              <i class="bi bi-globe"></i> <span id="langLabel">EN</span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0" aria-labelledby="langDropdown">
-              <li><a class="dropdown-item" href="#" data-lang="en">🇬🇧 English</a></li>
-              <li><a class="dropdown-item" href="#" data-lang="id">🇮🇩 Indonesia</a></li>
-              <li><a class="dropdown-item" href="#" data-lang="zh">🇨🇳 中文</a></li>
-            </ul>
-          </li>
           <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
-            <a class="btn btn-primary rounded-pill px-4 btn-glow" href="booking.html" data-i18n="nav_book">Book Now</a>
+            <a class="btn btn-primary shadow-sm" href="booking.html" data-i18n="nav_book">Book Now</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <!-- Navbar End -->
 
-  <!-- Neo-Tropical Hero Section -->
+  <!-- Cinematic Hero Section -->
   <section class="hero-neo">
-
-    <!-- Floating Badges -->
-    <div class="floating-badge d-none d-md-block" style="top: 25%; left: 15%; animation-delay: 0s;" data-i18n="hero_badge1">
-      ⭐ Top Rated Tours
-    </div>
-    <div class="floating-badge d-none d-md-block" style="top: 60%; right: 15%; animation-delay: 1.5s;" data-i18n="hero_badge2">
-      🌴 Local Experts
+    <div class="hero-bg-wrapper">
+      <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1920&q=80" alt="Bali Rice Terraces">
+      <div class="hero-overlay"></div>
     </div>
 
     <div class="container hero-content">
-      <div class="row justify-content-center">
+      <div class="row">
         <div class="col-lg-8">
-          <div class="glass-card p-5 rounded-5 shadow-lg reveal" style="overflow: visible;">
-            <img src="img/logo_modern.png" alt="B'jo Logo" class="img-fluid mb-4 rounded-circle shadow"
-              style="width: 120px; height: 120px; object-fit: cover; border: 4px solid white;">
-
-            <h1 class="mb-4" style="font-size: clamp(2.5rem, 7vw, 4.5rem); font-weight: 900; letter-spacing: -2px; line-height: 1.1;">
-              <span style="color: var(--text-main);">Bejo </span><span class="text-gradient" style="font-style: italic; padding-right: 0.2em;">Bali Trip</span>
-            </h1>
-            <p class="lead text-muted mb-5" data-i18n="hero_subtitle">Experience the ultimate Bali getaway. From hidden waterfalls to smart AI-planned itineraries, your premium journey starts here.</p>
-
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-              <a href="ai-planner.html"
-                class="btn btn-primary btn-lg rounded-pill px-5 py-3 btn-glow d-flex align-items-center gap-2">
-                <i class="bi bi-magic"></i> <span data-i18n="hero_btn_planner">AI Trip Planner</span>
-              </a>
-              <a href="#destinations" class="btn btn-outline-light btn-lg rounded-pill px-5 py-3" data-i18n="hero_btn_explore">
-                Explore Destinations
-              </a>
-            </div>
+          <h1 class="display-1 mb-4 stagger-text" style="--stagger: 1;">
+            <span class="text-primary">Bejo </span><br>
+            <span style="font-style: italic; color: var(--text-main);">Bali Trip</span>
+          </h1>
+          <p class="lead mb-5 stagger-text" style="--stagger: 2; max-width: 500px;" data-i18n="hero_subtitle">
+            Experience the ultimate Bali getaway. From hidden waterfalls to smart AI-planned itineraries, your premium journey starts here.
+          </p>
+          <div class="d-flex gap-3 flex-wrap stagger-text" style="--stagger: 3;">
+            <a href="ai-planner.html" class="btn btn-primary d-flex align-items-center gap-2">
+              <i class="bi bi-magic"></i> <span data-i18n="hero_btn_planner">AI Trip Planner</span>
+            </a>
+            <a href="#destinations" class="btn btn-outline-dark" data-i18n="hero_btn_explore">
+              Explore Destinations
+            </a>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Hero End -->
 
-  <!-- Why Us Section (Futuristic Grid) -->
-  <section id="why-us" class="py-6 reveal">
+  <!-- Why Us Section -->
+  <section id="why-us" class="py-5 mt-5">
     <div class="container">
-      <div class="text-center mb-5 pb-3">
-        <h6 class="text-uppercase text-gradient fw-bold mb-2 tracking-wide" data-i18n="why_eyebrow">The B'jo Experience</h6>
-        <h2 class="display-5 fw-bold text-main" data-i18n="why_title">Travel Smarter, Not Harder</h2>
+      <div class="mb-5 pb-3 reveal-fade" style="--stagger: 1;">
+        <h6 class="text-uppercase tracking-wide text-primary fw-bold mb-2" data-i18n="why_eyebrow">The B'jo Experience</h6>
+        <h2 class="display-4" data-i18n="why_title">Travel Smarter, Not Harder</h2>
       </div>
 
       <div class="row g-4">
-        <div class="col-md-4">
-          <div class="glass-card p-4 p-md-5 rounded-5 h-100 text-center d-flex flex-column">
-            <div class="feature-icon-box mx-auto">
+        <div class="col-md-4 reveal-fade" style="--stagger: 2;">
+          <div class="feature-card">
+            <div class="feature-icon-box">
               <i class="bi bi-robot"></i>
             </div>
             <h4 class="fw-bold mb-3" data-i18n="why_card1_title">AI-Powered Planning</h4>
             <p class="text-muted mb-4" data-i18n="why_card1_desc">Don't stress over details. Let our Smart AI generate the perfect itinerary based on your vibe and preferences in seconds.</p>
-            <div class="mt-auto">
-              <button class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalAI">
-                <i class="bi bi-info-circle me-1"></i> Learn More
-              </button>
-            </div>
+            <button class="btn btn-outline-dark w-100" data-bs-toggle="modal" data-bs-target="#modalAI">Learn More</button>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="glass-card p-4 p-md-5 rounded-5 h-100 text-center d-flex flex-column" style="border-color: var(--primary);">
-            <div class="feature-icon-box mx-auto">
+        <div class="col-md-4 reveal-fade" style="--stagger: 3;">
+          <div class="feature-card" style="border-color: var(--primary); background: linear-gradient(to bottom, #ffffff, #fdfcfb);">
+            <div class="feature-icon-box" style="background: var(--primary); color: white;">
               <i class="bi bi-car-front-fill"></i>
             </div>
             <h4 class="fw-bold mb-3" data-i18n="why_card2_title">Premium VIP Transport</h4>
-            <p class="text-muted mb-4" data-i18n="why_card2_desc">Explore Bali in style with our fleet of brand-new Avanza and HiAce — fully air-conditioned, pristine, and driven by professional English-speaking drivers.</p>
-            <div class="mt-auto">
-              <button class="btn btn-primary rounded-pill px-4 btn-glow" data-bs-toggle="modal" data-bs-target="#modalTransport">
-                <i class="bi bi-info-circle me-1"></i> See Our Fleet
-              </button>
-            </div>
+            <p class="text-muted mb-4" data-i18n="why_card2_desc">Explore Bali in style with our fleet of brand-new Avanza and HiAce — driven by professional English-speaking drivers.</p>
+            <button class="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target="#modalTransport">See Our Fleet</button>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="glass-card p-4 p-md-5 rounded-5 h-100 text-center d-flex flex-column">
-            <div class="feature-icon-box mx-auto">
+        <div class="col-md-4 reveal-fade" style="--stagger: 4;">
+          <div class="feature-card">
+            <div class="feature-icon-box">
               <i class="bi bi-compass"></i>
             </div>
             <h4 class="fw-bold mb-3" data-i18n="why_card3_title">Curated Local Gems</h4>
             <p class="text-muted mb-4" data-i18n="why_card3_desc">Go beyond the tourist traps. We take you to breathtaking hidden waterfalls, serene temples, and exclusive spots.</p>
-            <div class="mt-auto">
-              <button class="btn btn-outline-primary rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalGems">
-                <i class="bi bi-info-circle me-1"></i> Learn More
-              </button>
-            </div>
+            <button class="btn btn-outline-dark w-100" data-bs-toggle="modal" data-bs-target="#modalGems">Learn More</button>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Why Us End -->
 
-  <!-- Modal: AI-Powered Planning -->
-  <div class="modal fade" id="modalAI" tabindex="-1" aria-labelledby="modalAILabel" aria-hidden="true">
+  <!-- Interactive Destinations (Bento Box) -->
+  <section id="destinations" class="py-5 mt-4">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end mb-5 reveal-fade" style="--stagger: 1;">
+        <div>
+          <h6 class="text-uppercase tracking-wide text-primary fw-bold mb-2" data-i18n="dest_eyebrow">Top Picks</h6>
+          <h2 class="display-4" data-i18n="dest_title">Trending Destinations</h2>
+        </div>
+        <a href="tours.html" class="btn btn-outline-dark d-none d-md-inline-block" data-i18n="dest_view_all">View All Packages</a>
+      </div>
+
+      <div class="bento-grid">
+        <div class="bento-item large reveal-fade" style="--stagger: 1;">
+          <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=600&q=80" alt="Mount Batur">
+          <div class="bento-overlay">
+            <h3 class="fw-bold mb-1 bento-title text-white">Mount Batur Sunrise</h3>
+            <p class="small mb-0 text-white-50 bento-desc"><i class="bi bi-geo-alt"></i> Kintamani, Bali</p>
+          </div>
+        </div>
+
+        <div class="bento-item reveal-fade" style="--stagger: 2;">
+          <img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?auto=format&fit=crop&w=600&q=80" alt="Nusa Penida">
+          <div class="bento-overlay">
+            <h5 class="fw-bold mb-1 bento-title text-white">Nusa Penida</h5>
+            <p class="small mb-0 text-white-50 bento-desc">Crystal Waters</p>
+          </div>
+        </div>
+
+        <div class="bento-item reveal-fade" style="--stagger: 3;">
+          <img src="https://images.unsplash.com/photo-1554481923-a6918bd997bc?auto=format&fit=crop&w=600&q=80" alt="Uluwatu">
+          <div class="bento-overlay">
+            <h5 class="fw-bold mb-1 bento-title text-white">Uluwatu Temple</h5>
+            <p class="small mb-0 text-white-50 bento-desc">Cliffside Sunsets</p>
+          </div>
+        </div>
+
+        <div class="bento-item wide reveal-fade" style="--stagger: 4;">
+          <img src="https://images.unsplash.com/photo-1563191911-e65f8655ebf9?auto=format&fit=crop&w=600&q=80" alt="Lempuyang">
+          <div class="bento-overlay">
+            <h5 class="fw-bold mb-1 bento-title text-white">Gates of Heaven</h5>
+            <p class="small mb-0 text-white-50 bento-desc">East Bali</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Smart CTA Section -->
+  <section class="py-5 mt-4 mb-5">
+    <div class="container">
+      <div class="cta-box reveal-fade" style="--stagger: 1;">
+        <div class="row align-items-center position-relative z-10">
+          <div class="col-lg-7 mb-4 mb-lg-0">
+            <h2 class="display-6 fw-bold mb-3" data-i18n="cta_title">Too lazy to type? <br>Just use your voice.</h2>
+            <p class="lead mb-0 text-white-50" data-i18n="cta_desc">Our smart Voice-to-Text booking form will transcribe your requests and format them perfectly for our WhatsApp agent.</p>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <a href="booking.html" class="cta-btn d-inline-flex align-items-center gap-2">
+              <i class="bi bi-mic-fill fs-5"></i> <span data-i18n="cta_btn">Try Voice Booking</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals -->
+  <div class="modal fade" id="modalAI" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content border-0 rounded-5 shadow-lg" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);">
-        <div class="modal-header border-0 pb-0 p-4">
+      <div class="modal-content p-4">
+        <div class="modal-header border-0 pb-0">
           <div class="d-flex align-items-center gap-3">
-            <div class="feature-icon-box" style="width:50px; height:50px; font-size:1.4rem; margin-bottom:0; border-radius:1rem; flex-shrink:0;">
+            <div class="feature-icon-box mb-0" style="width:50px; height:50px; font-size:1.4rem;">
               <i class="bi bi-robot"></i>
             </div>
-            <h5 class="modal-title fw-bold fs-4" id="modalAILabel">AI-Powered Planning</h5>
+            <h5 class="fw-bold fs-4 mb-0">AI-Powered Planning</h5>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="modal-body p-4 pt-2">
+        <div class="modal-body">
           <p class="text-muted mb-4">Our AI Trip Planner is your personal travel concierge — available 24/7, powered by cutting-edge language models, and fine-tuned specifically for Bali travel.</p>
           <div class="row g-3">
             <div class="col-md-6">
-              <div class="p-3 rounded-4" style="background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.15);">
+              <div class="p-3 rounded-4" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1);">
                 <i class="bi bi-lightning-charge-fill text-primary fs-4 mb-2 d-block"></i>
                 <h6 class="fw-bold mb-1">Instant Itinerary</h6>
-                <p class="text-muted small mb-0">Generate a full day-by-day Bali itinerary in under 10 seconds based on your travel dates, budget, and interests.</p>
+                <p class="text-muted small mb-0">Generate a full day-by-day Bali itinerary in under 10 seconds.</p>
               </div>
             </div>
             <div class="col-md-6">
-              <div class="p-3 rounded-4" style="background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.15);">
-                <i class="bi bi-chat-heart-fill text-primary fs-4 mb-2 d-block"></i>
-                <h6 class="fw-bold mb-1">Conversational Planning</h6>
-                <p class="text-muted small mb-0">Chat naturally with our AI assistant. Ask follow-up questions, adjust plans, and get real-time recommendations.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4" style="background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.15);">
-                <i class="bi bi-pin-map-fill text-primary fs-4 mb-2 d-block"></i>
-                <h6 class="fw-bold mb-1">Personalized Spots</h6>
-                <p class="text-muted small mb-0">Not a fan of crowds? The AI curates hidden gems and lesser-known spots tailored to your vibe — adventure, culture, or relaxation.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4" style="background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.15);">
+              <div class="p-3 rounded-4" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1);">
                 <i class="bi bi-whatsapp text-primary fs-4 mb-2 d-block"></i>
-                <h6 class="fw-bold mb-1">Direct WhatsApp Booking</h6>
-                <p class="text-muted small mb-0">Once your AI plan is ready, send it directly to our WhatsApp agent with one click and confirm your booking instantly.</p>
+                <h6 class="fw-bold mb-1">Direct Booking</h6>
+                <p class="text-muted small mb-0">Send your AI plan directly to our WhatsApp agent with one click.</p>
               </div>
             </div>
           </div>
           <div class="text-center mt-4">
-            <a href="ai-planner.html" class="btn btn-primary rounded-pill px-5 btn-glow">
-              <i class="bi bi-magic me-2"></i> Try AI Planner Now
-            </a>
+            <a href="ai-planner.html" class="btn btn-primary rounded-pill px-5"><i class="bi bi-magic me-2"></i> Try AI Planner Now</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal: Premium VIP Transport -->
-  <div class="modal fade" id="modalTransport" tabindex="-1" aria-labelledby="modalTransportLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-      <div class="modal-content border-0 rounded-5 shadow-lg" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);">
-        <div class="modal-header border-0 pb-0 p-4">
+  <div class="modal fade" id="modalTransport" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content p-4">
+        <div class="modal-header border-0 pb-0">
           <div class="d-flex align-items-center gap-3">
-            <div class="feature-icon-box" style="width:50px; height:50px; font-size:1.4rem; margin-bottom:0; border-radius:1rem; flex-shrink:0;">
+            <div class="feature-icon-box mb-0" style="width:50px; height:50px; font-size:1.4rem; background: var(--primary); color: white;">
               <i class="bi bi-car-front-fill"></i>
             </div>
             <div>
-              <h5 class="modal-title fw-bold fs-4 mb-0" id="modalTransportLabel">Our VIP Fleet</h5>
+              <h5 class="fw-bold fs-4 mb-0">Our VIP Fleet</h5>
               <small class="text-muted">Brand new vehicles, professional drivers</small>
             </div>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="modal-body p-4 pt-2">
+        <div class="modal-body">
           <p class="text-muted mb-4">All vehicles are equipped with full air conditioning, USB charging ports, and a professional English-speaking driver. Your comfort is our priority from pick-up to drop-off.</p>
           <div class="row g-4">
-            <!-- Avanza -->
             <div class="col-md-6">
-              <div class="rounded-4 overflow-hidden border" style="border-color: rgba(5,150,105,0.2) !important;">
-                <img src="img/avanza.png" alt="Toyota Avanza Baru" class="w-100" style="height: 350px; object-fit: cover; object-position: center;">
-                <div class="p-3">
-                  <div class="d-flex align-items-center justify-content-between mb-2">
-                    <h5 class="fw-bold mb-0">Toyota Avanza (New)</h5>
-                    <span class="badge rounded-pill" style="background: rgba(5,150,105,0.1); color: var(--primary);">1-4 Pax</span>
-                  </div>
-                  <ul class="list-unstyled text-muted small mb-0">
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-2"></i>Perfect for small families & couples</li>
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-2"></i>Full AC & comfortable seating</li>
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-2"></i>Spacious trunk for luggage</li>
-                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Professional English-speaking driver</li>
-                  </ul>
-                </div>
-              </div>
+              <img src="img/avanza.png" alt="Toyota Avanza" class="w-100 rounded-4 mb-3 border" style="height: 200px; object-fit: cover;">
+              <h6 class="fw-bold">Toyota Avanza (New)</h6>
+              <p class="text-muted small">1-4 Pax. Perfect for small families & couples.</p>
             </div>
-            <!-- HiAce -->
             <div class="col-md-6">
-              <div class="rounded-4 overflow-hidden border" style="border-color: rgba(5,150,105,0.2) !important;">
-                <img src="img/hiace.png" alt="Toyota HiAce" class="w-100" style="height: 350px; object-fit: cover; object-position: center;">
-                <div class="p-3">
-                  <div class="d-flex align-items-center justify-content-between mb-2">
-                    <h5 class="fw-bold mb-0">Toyota HiAce</h5>
-                    <span class="badge rounded-pill" style="background: rgba(5,150,105,0.1); color: var(--primary);">5-12 Pax</span>
-                  </div>
-                  <ul class="list-unstyled text-muted small mb-0">
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-2"></i>Ideal for groups & corporate trips</li>
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-2"></i>Premium captain seats & wide cabin</li>
-                    <li class="mb-1"><i class="bi bi-check-circle-fill text-primary me-2"></i>Large luggage compartment</li>
-                    <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Professional English-speaking driver</li>
-                  </ul>
-                </div>
-              </div>
+              <img src="img/hiace.png" alt="Toyota HiAce" class="w-100 rounded-4 mb-3 border" style="height: 200px; object-fit: cover;">
+              <h6 class="fw-bold">Toyota HiAce</h6>
+              <p class="text-muted small">5-12 Pax. Ideal for groups & corporate trips.</p>
             </div>
           </div>
           <div class="text-center mt-4">
-            <a href="booking.html" class="btn btn-primary rounded-pill px-5 btn-glow">
-              <i class="bi bi-calendar-check me-2"></i> Book Transport Now
-            </a>
+            <a href="booking.html" class="btn btn-primary rounded-pill px-5"><i class="bi bi-calendar-check me-2"></i> Book Transport Now</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Modal: Curated Local Gems -->
-  <div class="modal fade" id="modalGems" tabindex="-1" aria-labelledby="modalGemsLabel" aria-hidden="true">
+  <div class="modal fade" id="modalGems" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content border-0 rounded-5 shadow-lg" style="background: rgba(255,255,255,0.95); backdrop-filter: blur(20px);">
-        <div class="modal-header border-0 pb-0 p-4">
+      <div class="modal-content p-4">
+        <div class="modal-header border-0 pb-0">
           <div class="d-flex align-items-center gap-3">
-            <div class="feature-icon-box" style="width:50px; height:50px; font-size:1.4rem; margin-bottom:0; border-radius:1rem; flex-shrink:0;">
+            <div class="feature-icon-box mb-0" style="width:50px; height:50px; font-size:1.4rem;">
               <i class="bi bi-compass"></i>
             </div>
-            <h5 class="modal-title fw-bold fs-4" id="modalGemsLabel">Curated Local Gems</h5>
+            <h5 class="fw-bold fs-4 mb-0">Curated Local Gems</h5>
           </div>
           <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
         </div>
-        <div class="modal-body p-4 pt-2">
+        <div class="modal-body">
           <p class="text-muted mb-4">Our local guides — born and raised in Bali — will take you far beyond the tourist postcards. These are the spots they take their own families to.</p>
           <div class="row g-3">
             <div class="col-md-6">
-              <div class="p-3 rounded-4" style="background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.15);">
+              <div class="p-3 rounded-4" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1);">
                 <i class="bi bi-droplet-fill text-primary fs-4 mb-2 d-block"></i>
                 <h6 class="fw-bold mb-1">Hidden Waterfalls</h6>
-                <p class="text-muted small mb-0">Trek through jungle paths to reach secret cascades like Tibumana, Tukad Cepung, and Nungnung — all off the beaten track.</p>
+                <p class="text-muted small mb-0">Trek through jungle paths to reach secret cascades.</p>
               </div>
             </div>
             <div class="col-md-6">
-              <div class="p-3 rounded-4" style="background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.15);">
+              <div class="p-3 rounded-4" style="background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.1);">
                 <i class="bi bi-buildings-fill text-primary fs-4 mb-2 d-block"></i>
                 <h6 class="fw-bold mb-1">Ancient Temples</h6>
-                <p class="text-muted small mb-0">Experience authentic Balinese ceremonies at smaller, spiritual temples away from tourist crowds — peaceful and truly sacred.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4" style="background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.15);">
-                <i class="bi bi-tree-fill text-primary fs-4 mb-2 d-block"></i>
-                <h6 class="fw-bold mb-1">Rice Terrace Walks</h6>
-                <p class="text-muted small mb-0">Walk through emerald rice paddies of Tegalalang and Jatiluwih with a local guide narrating centuries-old farming traditions.</p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="p-3 rounded-4" style="background: rgba(5,150,105,0.06); border: 1px solid rgba(5,150,105,0.15);">
-                <i class="bi bi-bowl-hot-fill text-primary fs-4 mb-2 d-block"></i>
-                <h6 class="fw-bold mb-1">Local Food Experience</h6>
-                <p class="text-muted small mb-0">Stop at real local warungs for authentic Balinese cuisine — no tourist menus, just genuine flavors at unbeatable prices.</p>
+                <p class="text-muted small mb-0">Experience authentic Balinese ceremonies away from crowds.</p>
               </div>
             </div>
           </div>
           <div class="text-center mt-4">
-            <a href="tours.html" class="btn btn-primary rounded-pill px-5 btn-glow">
-              <i class="bi bi-map me-2"></i> Explore Our Tour Packages
-            </a>
+            <a href="tours.html" class="btn btn-primary rounded-pill px-5"><i class="bi bi-map me-2"></i> Explore Packages</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-
-  <!-- Interactive Destinations (Bento Box) -->
-  <section id="destinations" class="py-6 reveal">
-    <div class="container">
-      <div class="d-flex justify-content-between align-items-end mb-5">
-        <div>
-          <h6 class="text-uppercase text-gradient fw-bold mb-2 tracking-wide" data-i18n="dest_eyebrow">Top Picks</h6>
-          <h2 class="display-5 fw-bold text-main" data-i18n="dest_title">Trending Destinations</h2>
-        </div>
-        <a href="tours.html" class="btn btn-outline-light rounded-pill px-4 py-2 d-none d-md-inline-block" data-i18n="dest_view_all">View All Packages <i class="bi bi-arrow-right"></i></a>
-      </div>
-
-      <div class="bento-grid">
-        <!-- Item 1 (Large) -->
-        <div class="bento-item large shadow-sm">
-          <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=600&q=80"
-            alt="Mount Batur">
-          <div class="bento-overlay">
-            <h3 class="fw-bold mb-1">Mount Batur Sunrise</h3>
-            <p class="small mb-0 text-white-50"><i class="bi bi-geo-alt"></i> Kintamani, Bali</p>
-          </div>
-        </div>
-
-        <!-- Item 2 (Standard) -->
-        <div class="bento-item shadow-sm">
-          <img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?auto=format&fit=crop&w=600&q=80"
-            alt="Nusa Penida">
-          <div class="bento-overlay">
-            <h5 class="fw-bold mb-1">Nusa Penida</h5>
-            <p class="small mb-0 text-white-50">Crystal Waters</p>
-          </div>
-        </div>
-
-        <!-- Item 3 (Tall) -->
-        <div class="bento-item tall shadow-sm">
-          <img src="https://images.unsplash.com/photo-1554481923-a6918bd997bc?auto=format&fit=crop&w=600&q=80"
-            alt="Uluwatu">
-          <div class="bento-overlay">
-            <h5 class="fw-bold mb-1">Uluwatu Temple</h5>
-            <p class="small mb-0 text-white-50">Cliffside Sunsets</p>
-          </div>
-        </div>
-
-        <!-- Item 4 (Standard) -->
-        <div class="bento-item shadow-sm">
-          <img src="https://images.unsplash.com/photo-1563191911-e65f8655ebf9?auto=format&fit=crop&w=600&q=80"
-            alt="Lempuyang">
-          <div class="bento-overlay">
-            <h5 class="fw-bold mb-1">Gates of Heaven</h5>
-            <p class="small mb-0 text-white-50">East Bali</p>
-          </div>
-        </div>
-
-        <!-- Item 5 (Wide) -->
-        <div class="bento-item wide shadow-sm">
-          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80"
-            alt="Ubud">
-          <div class="bento-overlay">
-            <h4 class="fw-bold mb-1">Ubud Rice Terraces</h4>
-            <p class="small mb-0 text-white-50"><i class="bi bi-geo-alt"></i> Tegalalang</p>
-          </div>
-        </div>
-
-        <!-- Item 6 (Wide) -->
-        <div class="bento-item wide shadow-sm">
-          <img src="https://images.unsplash.com/photo-1535916707207-35f97e715e1c?auto=format&fit=crop&w=600&q=80"
-            alt="Tegenungan Waterfall">
-          <div class="bento-overlay">
-            <h4 class="fw-bold mb-1">Hidden Waterfalls</h4>
-            <p class="small mb-0 text-white-50"><i class="bi bi-geo-alt"></i> Tegenungan & Tibumana</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center mt-4 d-md-none">
-        <a href="tours.html" class="btn btn-outline-light w-100 rounded-pill py-3">View All Packages</a>
-      </div>
-    </div>
-  </section>
-  <!-- Destinations End -->
-
-  <!-- Smart CTA Section -->
-  <section class="py-6">
-    <div class="container">
-      <div class="glass-card rounded-5 p-5 position-relative overflow-hidden shadow-lg reveal"
-        style="background: linear-gradient(135deg, rgba(5, 150, 105, 0.9), rgba(13, 148, 136, 0.9)); color: white; border-color: rgba(255,255,255,0.2);">
-        <!-- Decorative Background Elements -->
-        <i class="bi bi-soundwave position-absolute"
-          style="font-size: 20rem; right: -5%; top: -20%; opacity: 0.1; transform: rotate(15deg);"></i>
-
-        <div class="row align-items-center position-relative z-1">
-          <div class="col-lg-7 mb-4 mb-lg-0 text-center text-lg-start">
-            <h2 class="display-6 fw-bold mb-3 text-white-fixed" data-i18n="cta_title">Too lazy to type? <br>Just use your voice.</h2>
-            <p class="lead mb-0" style="color: rgba(255,255,255,0.8);" data-i18n="cta_desc">Our smart Voice-to-Text booking form will transcribe your requests and format them perfectly for our WhatsApp agent.</p>
-          </div>
-          <div class="col-lg-5 text-center text-lg-end">
-            <a href="booking.html" class="btn btn-light btn-lg rounded-pill px-5 py-4 fw-bold text-primary shadow-lg"
-              style="transition: transform 0.3s; transform-origin: center;">
-              <i class="bi bi-mic-fill fs-4 me-2"></i> <span data-i18n="cta_btn">Try Voice Booking</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
-  <footer class="footer text-center pt-5 pb-4 mt-5">
-    <div class="container border-top pt-4" style="border-color: rgba(0,0,0,0.1) !important;">
+  <footer class="footer text-center pt-5 pb-4 mt-5 border-top">
+    <div class="container pt-4">
       <p class="text-muted mb-0" data-i18n="footer_copy">&copy; 2024 B'jo Bali Transport & Tour. Premium Experience.</p>
     </div>
   </footer>
 
-  <!-- AI Chatbot Widget -->
-  <div class="chatbot-widget position-fixed bottom-0 end-0 m-4 z-3">
-    <button
-      class="btn btn-primary rounded-circle shadow-lg d-flex align-items-center justify-content-center p-3 btn-glow"
+  <!-- Chatbot Widget -->
+  <div class="position-fixed bottom-0 end-0 m-4 z-3">
+    <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center p-0 shadow-lg"
       style="width: 60px; height: 60px;" onclick="document.getElementById('chatWindow').classList.toggle('show-chat')">
-      <i class="bi bi-chat-dots-fill fs-3"></i>
+      <i class="bi bi-chat-dots-fill fs-3 text-white"></i>
     </button>
 
-    <!-- Chat Window -->
-    <div id="chatWindow" class="position-absolute bottom-100 end-0 mb-4"
-      style="width: 340px; transform-origin: bottom right; z-index: 1050;">
-      <div class="glass-card shadow-lg"
-        style="border-radius: 1.5rem; overflow: hidden; border: 1px solid rgba(255,255,255,0.8); background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(24px);">
-        <!-- Header -->
-        <div class="p-3 text-white d-flex justify-content-between align-items-center"
-          style="background: linear-gradient(135deg, var(--primary), #059669);">
+    <div id="chatWindow" class="position-absolute bottom-100 end-0 mb-3" style="width: 340px;">
+      <div class="bg-surface shadow-lg" style="border-radius: 1.5rem; overflow: hidden; border: 1px solid rgba(0,0,0,0.05); background: var(--bg-surface);">
+        <div class="p-3 text-white d-flex justify-content-between align-items-center" style="background: var(--primary);">
           <div class="d-flex align-items-center gap-2">
-            <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center shadow-sm"
-              style="width: 36px; height: 36px;">
+            <div class="bg-white text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 36px; height: 36px;">
               <i class="bi bi-robot fs-5"></i>
             </div>
             <div>
               <h6 class="mb-0 fw-bold">Gemma AI</h6>
-              <small class="text-white-50" style="font-size: 0.75rem;">Powered by LM Studio</small>
             </div>
           </div>
-          <button type="button" class="btn-close btn-close-white"
-            onclick="document.getElementById('chatWindow').classList.remove('show-chat')"></button>
+          <button type="button" class="btn-close btn-close-white" onclick="document.getElementById('chatWindow').classList.remove('show-chat')"></button>
         </div>
-
-        <!-- Body -->
-        <div class="p-3" id="chatBody" style="height: 250px; overflow-y: auto; background: rgba(248, 250, 252, 0.5);">
+        <div class="p-3" id="chatBody" style="height: 250px; overflow-y: auto; background: var(--bg-dark);">
           <div class="d-flex gap-2 mb-3">
-            <div
-              class="bg-primary text-white rounded-circle d-flex flex-shrink-0 align-items-center justify-content-center shadow-sm"
-              style="width: 30px; height: 30px; font-size: 0.8rem;">
+            <div class="bg-primary text-white rounded-circle d-flex flex-shrink-0 align-items-center justify-content-center" style="width: 30px; height: 30px; font-size: 0.8rem;">
               <i class="bi bi-robot"></i>
             </div>
-            <div class="p-3 rounded-4 shadow-sm"
-              style="background: white; border-top-left-radius: 0 !important; max-width: 85%; color: var(--text-main);">
-              <small class="fw-medium">Hello! I'm your premium AI assistant powered by Gemma. How can I craft your
-                perfect Bali trip today?</small>
+            <div class="p-3 shadow-sm text-main" style="border-radius: 1rem 1rem 1rem 0; background: var(--bg-surface); max-width: 85%;">
+              <small class="fw-medium">Hello! I'm your premium AI assistant. How can I craft your perfect Bali trip today?</small>
             </div>
           </div>
         </div>
-
-        <!-- Footer -->
-        <div class="p-3 bg-white border-top" style="border-color: rgba(0,0,0,0.05) !important;">
-          <div class="input-group bg-light rounded-pill p-1 border">
-            <input type="text" id="chatInput" class="form-control border-0 bg-transparent ps-3"
-              placeholder="Ask me anything..." style="box-shadow: none;">
-            <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center btn-glow"
-              id="chatSendBtn" style="width: 40px; height: 40px; padding: 0;">
-              <i class="bi bi-send-fill"></i>
+        <div class="p-3 border-top" style="background: var(--bg-surface);">
+          <div class="input-group bg-dark rounded-pill p-1" style="background: var(--bg-dark) !important;">
+            <input type="text" id="chatInput" class="form-control border-0 bg-transparent ps-3" placeholder="Ask me anything..." style="box-shadow: none;">
+            <button class="btn btn-primary rounded-circle d-flex align-items-center justify-content-center" id="chatSendBtn" style="width: 40px; height: 40px; padding: 0;">
+              <i class="bi bi-send-fill text-white"></i>
             </button>
           </div>
         </div>
@@ -504,121 +351,31 @@
     // Smooth Scroll & Navbar behavior
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
+      if (window.scrollY > 50) navbar.classList.add('scrolled');
+      else navbar.classList.remove('scrolled');
     });
 
-    // Scroll Reveal Animation
-    function reveal() {
-      var reveals = document.querySelectorAll(".reveal");
-      for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        if (elementTop < windowHeight - 100) {
-          reveals[i].classList.add("active");
+    // Premium Intersection Observer for Staggered Reveals
+    const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          observer.unobserve(entry.target);
         }
-      }
-    }
-    window.addEventListener("scroll", reveal);
-    reveal(); // Trigger on load
+      });
+    }, observerOptions);
 
-    // Chatbot LM Studio Integration
-    const chatInput = document.getElementById('chatInput');
+    document.querySelectorAll('.reveal-fade, .reveal-clip').forEach((el) => {
+      observer.observe(el);
+    });
+
+    // Chatbot minimal script
     const chatSendBtn = document.getElementById('chatSendBtn');
-    const chatBody = document.getElementById('chatBody');
-
-    let conversationHistory = [];
-
-    function addMessageToUI(text, isUser) {
-      const wrapper = document.createElement('div');
-      wrapper.className = isUser ? "d-flex gap-2 mb-3 justify-content-end" : "d-flex gap-2 mb-3";
-
-      let html = '';
-      if (isUser) {
-        html = `
-            <div class="p-3 rounded-4 shadow-sm text-white" style="background: linear-gradient(135deg, var(--primary), #047857); border-top-right-radius: 0 !important; max-width: 85%;">
-              <small class="fw-medium">${text}</small>
-            </div>
-          `;
-      } else {
-        html = `
-            <div class="bg-primary text-white rounded-circle d-flex flex-shrink-0 align-items-center justify-content-center shadow-sm" style="width: 30px; height: 30px; font-size: 0.8rem;">
-              <i class="bi bi-robot"></i>
-            </div>
-            <div class="p-3 rounded-4 shadow-sm" style="background: white; border-top-left-radius: 0 !important; max-width: 85%; color: var(--text-main);">
-              <small class="fw-medium">${text}</small>
-            </div>
-          `;
-      }
-
-      wrapper.innerHTML = html;
-      chatBody.appendChild(wrapper);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    async function sendMessage() {
-      const text = chatInput.value.trim();
-      if (!text) return;
-
-      // Add to UI & History
-      addMessageToUI(text, true);
-      conversationHistory.push({ role: 'user', content: text });
+    chatSendBtn.addEventListener('click', () => {
+      const chatInput = document.getElementById('chatInput');
       chatInput.value = '';
-      chatInput.disabled = true;
-      chatSendBtn.disabled = true;
-
-      // Loading indicator
-      const loadingId = 'loading-' + Date.now();
-      const loadingDiv = document.createElement('div');
-      loadingDiv.id = loadingId;
-      loadingDiv.className = "d-flex gap-2 mb-3";
-      loadingDiv.innerHTML = `
-          <div class="bg-primary text-white rounded-circle d-flex flex-shrink-0 align-items-center justify-content-center shadow-sm" style="width: 30px; height: 30px; font-size: 0.8rem;">
-            <i class="bi bi-robot"></i>
-          </div>
-          <div class="p-3 rounded-4 shadow-sm d-flex align-items-center gap-1" style="background: white; border-top-left-radius: 0 !important;">
-            <span class="spinner-grow spinner-grow-sm text-primary" role="status" style="width: 0.4rem; height: 0.4rem;"></span>
-            <span class="spinner-grow spinner-grow-sm text-primary" role="status" style="width: 0.4rem; height: 0.4rem; animation-delay: 0.2s;"></span>
-            <span class="spinner-grow spinner-grow-sm text-primary" role="status" style="width: 0.4rem; height: 0.4rem; animation-delay: 0.4s;"></span>
-          </div>
-        `;
-      chatBody.appendChild(loadingDiv);
-      chatBody.scrollTop = chatBody.scrollHeight;
-
-      try {
-        const response = await fetch('http://localhost:5000/api/chat', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ messages: conversationHistory })
-        });
-        const data = await response.json();
-
-        document.getElementById(loadingId).remove();
-
-        if (data.success) {
-          addMessageToUI(data.reply, false);
-          conversationHistory.push({ role: 'assistant', content: data.reply });
-        } else {
-          addMessageToUI("Sorry, my AI brain (LM Studio) is currently offline.", false);
-        }
-      } catch (error) {
-        document.getElementById(loadingId).remove();
-        addMessageToUI("Connection to local server failed.", false);
-      }
-
-      chatInput.disabled = false;
-      chatSendBtn.disabled = false;
-      chatInput.focus();
-    }
-
-    chatSendBtn.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') sendMessage();
     });
   </script>
 </body>
-
 </html>

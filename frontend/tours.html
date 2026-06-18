@@ -21,7 +21,7 @@
         -webkit-backdrop-filter: blur(10px);
       }
       .filter-btn:active {
-        transform: scale(0.95);
+        transform: scale(0.97);
       }
       .filter-btn:hover, .filter-btn.active {
         background: var(--primary);
@@ -29,17 +29,17 @@
         border-color: var(--primary);
         box-shadow: 0 8px 25px -5px var(--primary-glow);
       }
-      /* Fluid Grid Animation */
+      /* Fluid Grid Animation (Motion Engineering) */
       .tour-item {
-        transition: opacity var(--duration-med) var(--ease-spring), transform var(--duration-med) var(--ease-spring);
+        transition: opacity 350ms var(--ease-out-back), transform 350ms var(--ease-out-back);
         opacity: 1;
         transform: scale(1);
       }
       .tour-item.hide {
         opacity: 0;
-        transform: scale(0.9);
+        transform: scale(0.95);
         pointer-events: none;
-        display: none; /* In JS we will add a slight delay before display none */
+        transition: opacity 200ms var(--ease-out), transform 200ms var(--ease-out);
       }
     </style>
   </head>
@@ -66,7 +66,7 @@
     </nav>
 
     <!-- Header Section -->
-    <section class="pb-4 reveal" style="padding-top: 120px;">
+    <section class="pb-4 reveal-fade" style="padding-top: 120px; --stagger: 1;">
       <div class="container text-center mt-5">
         <h6 class="text-uppercase text-gradient fw-bold mb-2 tracking-wide">Curated Experiences</h6>
         <h1 class="display-4 fw-bold text-main mb-3">Exclusive <span class="text-gradient">Tour Packages</span></h1>
@@ -83,12 +83,12 @@
     </section>
 
     <!-- Packages Section -->
-    <section class="pb-6 reveal">
+    <section class="pb-6">
       <div class="container">
         <div class="row g-5" id="galleryContainer">
           
           <!-- Package 1: Ubud Tour -->
-          <div class="col-lg-4 col-md-6 tour-item culture nature">
+          <div class="col-lg-4 col-md-6 tour-item culture nature reveal-fade" style="--stagger: 1;">
             <div class="package-card glass-card">
               <div class="package-img-wrapper">
                 <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=600&q=80" alt="Ubud Tour">
@@ -112,7 +112,7 @@
           </div>
 
           <!-- Package 2: East Bali Tour -->
-          <div class="col-lg-4 col-md-6 tour-item culture nature">
+          <div class="col-lg-4 col-md-6 tour-item culture nature reveal-fade" style="--stagger: 2;">
             <div class="package-card glass-card">
               <div class="package-img-wrapper">
                 <img src="https://images.unsplash.com/photo-1563191911-e65f8655ebf9?auto=format&fit=crop&w=600&q=80" alt="East Bali Tour">
@@ -136,7 +136,7 @@
           </div>
 
           <!-- Package 3: North Bali Tour -->
-          <div class="col-lg-4 col-md-6 tour-item nature water">
+          <div class="col-lg-4 col-md-6 tour-item nature water reveal-fade" style="--stagger: 3;">
             <div class="package-card glass-card">
               <div class="package-img-wrapper">
                 <img src="https://images.unsplash.com/photo-1570789210967-2cac24afeb00?auto=format&fit=crop&w=600&q=80" alt="North Bali Tour">
@@ -160,7 +160,7 @@
           </div>
 
           <!-- Package 4: South Bali Tour -->
-          <div class="col-lg-4 col-md-6 tour-item water culture">
+          <div class="col-lg-4 col-md-6 tour-item water culture reveal-fade" style="--stagger: 4;">
             <div class="package-card glass-card">
               <div class="package-img-wrapper">
                 <img src="https://images.unsplash.com/photo-1554481923-a6918bd997bc?auto=format&fit=crop&w=600&q=80" alt="South Bali Tour">
@@ -184,7 +184,7 @@
           </div>
 
           <!-- Package 5: Kintamani Tour -->
-          <div class="col-lg-4 col-md-6 tour-item culture nature">
+          <div class="col-lg-4 col-md-6 tour-item culture nature reveal-fade" style="--stagger: 5;">
             <div class="package-card glass-card" style="border-color: var(--primary);">
               <div class="position-absolute top-0 end-0 bg-primary text-white px-3 py-1 rounded-bl-lg z-3" style="border-radius: 0 1.5rem 0 1rem; font-weight: bold; font-size: 0.8rem;">BEST SELLER</div>
               <div class="package-img-wrapper">
@@ -209,7 +209,7 @@
           </div>
 
           <!-- Package 6: Waterfall Tour -->
-          <div class="col-lg-4 col-md-6 tour-item water nature">
+          <div class="col-lg-4 col-md-6 tour-item water nature reveal-fade" style="--stagger: 6;">
             <div class="package-card glass-card">
               <div class="package-img-wrapper">
                 <img src="https://images.unsplash.com/photo-1535916707207-35f97e715e1c?auto=format&fit=crop&w=600&q=80" alt="Waterfall Tour">
@@ -233,7 +233,7 @@
           </div>
 
           <!-- Package 7: Fast Boat & Transport -->
-          <div class="col-lg-12 tour-item all mt-2">
+          <div class="col-lg-12 tour-item all mt-2 reveal-fade" style="--stagger: 7;">
             <div class="package-card glass-card p-4" style="background: linear-gradient(145deg, #dcfce7, #f0f9ff);">
               <div class="row align-items-center">
                 <div class="col-md-8">
@@ -257,7 +257,7 @@
     </section>
 
     <!-- Airport Transfers Section -->
-    <section class="py-5 mt-4 reveal">
+    <section class="py-5 mt-4 reveal-fade" style="--stagger: 2;">
       <div class="container text-center mb-5">
         <h6 class="text-uppercase text-gradient fw-bold mb-2 tracking-wide">Pickup & Drop Off</h6>
         <h2 class="fw-bold text-main mb-3">Airport / Hotel Transfers</h2>
@@ -472,19 +472,20 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-      // Scroll Reveal Animation
-      function reveal() {
-        var reveals = document.querySelectorAll(".reveal");
-        for (var i = 0; i < reveals.length; i++) {
-          var windowHeight = window.innerHeight;
-          var elementTop = reveals[i].getBoundingClientRect().top;
-          if (elementTop < windowHeight - 150) {
-            reveals[i].classList.add("active");
+      // Premium Intersection Observer for Staggered Reveals
+      const observerOptions = { root: null, rootMargin: '0px', threshold: 0 };
+      const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
           }
-        }
-      }
-      window.addEventListener("scroll", reveal);
-      reveal();
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.reveal-fade').forEach((el) => {
+        observer.observe(el);
+      });
 
       // Smart Filter Logic with Fluid Animation
       const filterBtns = document.querySelectorAll('.filter-btn');
@@ -504,24 +505,19 @@
             
             if (shouldShow) {
               item.style.display = 'block';
-              // slight delay to allow display block to render before animating opacity
               requestAnimationFrame(() => {
                 requestAnimationFrame(() => {
                   item.classList.remove('hide');
-                  item.style.opacity = '1';
-                  item.style.transform = 'scale(1)';
                 });
               });
             } else {
-              item.style.opacity = '0';
-              item.style.transform = 'scale(0.9)';
               item.classList.add('hide');
-              // wait for animation to finish before removing from layout
+              // wait for exit animation to finish before layout shift
               setTimeout(() => {
                 if (item.classList.contains('hide')) {
                   item.style.display = 'none';
                 }
-              }, 400); // 400ms matches --duration-med
+              }, 200);
             }
           });
         });
